@@ -63,6 +63,7 @@ src|url|要播放音频的url，为避免兼容问题，一般会加上多种资
 ### 2·视频标签--video
 以前都是flash来实现视频播放，但是flash本身存在漏洞  
 不同浏览器对标签的兼容性：  
+
 格式|IE|Firefox|Opera|Chrome|Safari
 --|--|--|--|--|--
 Ogg|No|3.5+|10.5+|5.0+|No
