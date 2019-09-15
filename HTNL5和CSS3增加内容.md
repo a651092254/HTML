@@ -78,7 +78,7 @@ WebM|No|4.0+|10.6+|6.0+|No
 #### 标签属性
 属性|值|描述
 --|--|--
-autoplay|autoplay|视频就绪就自动播放（谷歌浏览器需要添加muted静音来实现自动播放）
+autoplay|autoplay|视频就绪就自动播放（谷歌浏览器需要添加muted静音来实现自动播放）（重点）
 controls|controls|显示视频播放控件
 width|px|设置播放器宽度
 height|px|设置播放器高度
@@ -95,6 +95,46 @@ muted|muted|静音播放
 ```
 #### 标签效果
 ![video标签](img/video标签效果.gif)
+## 三·新增input属性
+
+属性值|说明
+--|--
+type="email"|限制用户输入必须为邮箱地址
+type="url"|限制用户输入必须为URL类型
+type="date"|限制用户输入必须为日期类型
+type="time"|限制用户输入必须为时间
+type="month"|限制用户输入必须为月类型
+type="week"|限制用户输入必须为周类型
+***type="number"***|限制用户输入必须为数字类型
+***type="tel"***|限制用户输入必须为手机号格式
+***type="search"***|搜索框
+type="color"|颜色选择表单
+
+#### 代码示例
+```
+    <form action="">
+        <ul>
+            <li>邮箱：<input type="email"/></li>
+            <li>网址：<input type="url"/></li>
+            <li>日期：<input type="date"/></li>
+            <li>时间：<input type="time"/></li>
+            <li>月份：<input type="month"/></li>
+            <li>周：<input type="week"/></li>
+            <li>数量：<input type="number"/></li>
+            <li>手机号码：<input type="tel"/></li>
+            <li>搜索：<input type="search"/></li>
+            <li>颜色：<input type="color"/></li>
+
+            <li> <input type="submit" value="提交"></li>
+        </ul>
+    </form>
+```
+#### 标签效果
+![new_input](img/new_input.png)
+## 四·新增表单属性
+
+
+
 
 
 

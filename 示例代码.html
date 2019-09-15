@@ -8,10 +8,13 @@
         .pink {
             background-color: pink;
         }
+        .h{
+            height: 1000px;
+        }
     </style>
 </head>
 
-<body>
+<body class="h">
     <header class="pink">
         <h3>header</h3>
     </header>
@@ -38,6 +41,22 @@
     <video controls preload="none" loop muted poster="img/video_1.jpg" width="500px">
         <source src="media/tvc.mp4"> 
     </video>
+    <form action="">
+        <ul>
+            <li>邮箱：<input type="email"/></li>
+            <li>网址：<input type="url"/></li>
+            <li>日期：<input type="date"/></li>
+            <li>时间：<input type="time"/></li>
+            <li>月份：<input type="month"/></li>
+            <li>周：<input type="week"/></li>
+            <li>数量：<input type="number"/></li>
+            <li>手机号码：<input type="tel"/></li>
+            <li>搜索：<input type="search"/></li>
+            <li>颜色：<input type="color"/></li>
+
+            <li> <input type="submit" value="提交"></li>
+        </ul>
+    </form>
 
 </body>
 
