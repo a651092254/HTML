@@ -1,4 +1,4 @@
-# HTML5新增标签
+# HTML5新增内容
 ## 一·新增语义化标签
 - header    --头部标签
 - nav   --导航标签
@@ -133,7 +133,42 @@ type="color"|颜色选择表单
 ![new_input](img/new_input.png)
 ## 四·新增表单属性
 
+# CSS3新增内容
+## 一、属性选择器
+## 二、结构伪类选择器
+## 三、伪元素选择器
+## 四、2D转换
+## 五、动画
+### 1.基本使用
+### 2.动画序列
+### 3.动画属性
+#### 常用属性：
+动画属性|作用|属性参数
+--|--|--
+@keyframes|规定动画|命名规则
+animation-name|动画名称|已设置的动画名称
+animation-duration|动画完成一个周期的时间|s/ms
+animation-timing-function|速度曲线|ease/linear/steps( )
+animation-delay|动画开始时间|s/ms
+animation-iteration-count|动画循环次数|正整数/infinite
+animation-direction|动画在下一周期播放的方向|normal/alternate
+animation-fill-mode|动画结束时的状态|保持forwards/回到起始backwards
+animation-play-state|动画播放状态|running/paused
 
+#### 属性简写：
+animation: 动画名称 持续时间 运动曲线 何时开始 播放次数 是否反方向 动画起始或结束的状态;  
+animation: name duration timing-function delay iteration-count direction fill-mode;  
+前两个属性不能省略。  
+简写不包含暂停播放的状态，状态经常和鼠标操作搭配使用。
+#### 速度曲线详解
+值|描述
+--|--
+linear|匀速
+ease|默认，低速开始变快，结束变慢
+ease-in|以低速开始
+ease-out|以低速结束
+ease-in-out|以低速开始和结束
+steps( )|指定时间函数中的步长 (突变式，上面其他的是渐变式))1
 
 
 
