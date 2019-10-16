@@ -5,36 +5,61 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        .pink {
+        /* .pink {
             background-color: pink;
         }
-        .h{
+        
+        .h {
             height: 1000px;
         }
+        
         .father {
             width: 500px;
             height: 500px;
             margin: 100px auto;
             background-color: aquamarine;
         }
-        span{
+        
+        span {
             float: left;
             width: 50px;
             height: 50px;
-            background-color:pink;
-            border: black 1px solid;     
+            background-color: pink;
+            border: black 1px solid;
         }
-        span[class]{
-            background-color:blue;
+        
+        span[class] {
+            background-color: blue;
         }
-        .father span[class^="grand"]{
+        
+        .father span[class^="grand"] {
             background-color: yellow;
         }
-        .father span[class$="dson1"]{
+        
+        .father span[class$="dson1"] {
             background-color: red;
         }
-        .father span[class*="i"]{
+        
+        .father span[class*="i"] {
             background-color: purple;
+        } */
+        
+        .child li:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        
+        .child li:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        
+        .type li:nth-of-type(2) {
+            width: 100px;
+            height: 100px;
+            background-color: red;
         }
     </style>
 </head>
@@ -65,8 +90,9 @@
     </audio>
     <video controls preload="none" loop muted poster="img/video_1.jpg" width="500px">
         <source src="media/tvc.mp4"> 
-    </video> -->
-    <!-- <form action="get" autocomplete="on" >
+    </video>
+    <form action="get" autocomplete="on" >
+        <ul>
             <li>邮箱：<input type="email"/></li>
             <li>网址：<input type="url"/></li>
             <li>日期：<input type="date"/></li>
@@ -84,14 +110,24 @@
             <li><input type="submit" value="提交"></li>
 
         </ul>
-    </form> -->
+    </form>
     <div class="father">
         <span class="son1">大儿子</span>
         <span class="son2">小儿子</span>
         <span class="grandson1">大孙子</span>
         <span class="grandson2">小孙子</span>
         <span class="pick">捡来的</span>
-    </div>
+    </div> -->
+    <ul class="child">
+        <li>1</li>
+        <p>2</p>
+        <li>3</li>
+    </ul>
+    <ul class="type">
+        <li>1</li>
+        <p>2</p>
+        <li>3</li>
+    </ul>
 </body>
 
 </html>

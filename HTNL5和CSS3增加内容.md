@@ -219,7 +219,66 @@ a[b*="c"]|匹配具有b属性并且属性值包含c的a标签
 ##### 代码效果：
 ![属性选择器](img/属性选择器.png)
 ### 2、结构伪类选择器
+选择器|匹配结果
+--|--
+A:first-child|匹配父级元素中的第一个子元素,相当于a:nth-child(1)；
+A:last-child|匹配父级元素中的最后一个元素,a：nth-last-child(1)；
+A:nth-chile(n)|匹配父级元素中的第n个a元素，n可以是**整数**、**关键词**（even/odd）,也可以是**公式**;n从1开始(常见公式：2n,2n+1,5n,5-n,5+n)；
+A:nth-last-child|匹配父级元素中倒数第n个元素；
+A:first-of-type|选择父元素中第一个类型为A的子元素；
+A：last-of-type|选择父元素中最后一个类型为A的子元素
+A:nth-of-type(n)|选择父元素中第n个类型为A的子元素
+>**A:nth-child和A:nth-of-type的区别**  
+nth-child会从所有子元素中选取，如果最后选中的不是A类型会导致未选中任何元素，nth-of-type是先把A类元素选出来，再挑第n个。
+##### 代码示例：
+```
+    <ul class="child">
+        <li>1</li>
+        <p>2</p>
+        <li>3</li>
+    </ul>
+    <ul class="type">
+        <li>1</li>
+        <p>2</p>
+        <li>3</li>
+    </ul>
+
+     .child li:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        
+        .child li:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        
+        .type li:nth-of-type(2) {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+```
+##### 代码效果：
+![结构伪类选择器](img/结构伪类选择器.png)
 ### 3、伪元素选择器
+选择器|作用
+--|--
+A::before|在A元素内容的前面加入一个行内元素
+A::after|在A元素内容的后面加入一个行内元素
+>**注意事项**  
+选择器内必须包含content属性；  
+伪元素选择器和标签选择器一样，权重是1；  
+加入的内容是行内元素；
+##### 代码示例
+```
+
+```
+##### 代码效果
+
 ## 二、转换
 ### 1、2D转换
 #### （1）位移
