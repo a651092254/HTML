@@ -412,13 +412,153 @@ transform:translate(x,y) rotate(度数) scale(x,y);
 
 ### 2、3D转换
 #### （1）三维坐标系
+相对于之前的二维多一个z轴，方向为从屏幕垂直指向外面
 #### （2）3D移动
+语法|作用
+--|--
+translate3d(x,y,z)|设置三维的移动
+translate(z)|沿Z轴方向进行移动
+>**注意点：**  
+translate3d中三个参数不能有省略，如果没有位移需要填充0；  
+3D移动需要借助透视来实现效果；  
+Z轴位移，正值是向屏幕外位移，负值是向屏幕内侧；
+##### 示例代码：
+```
+<div class="banner">
+    <div class="trans3d">3D位移</div>
+</div>
+
+.banner{
+    perspective: 500px;
+    width: 600px;
+    height: 500px;
+    margin: 60px auto;
+    padding: 100px;
+    background-color: #60e160;
+}
+div{
+    margin: 100px;;
+    width: 100px;
+    height: 100px;
+    border:black solid 1px;
+    line-height: 50px;
+    text-align: center;
+    background-color: pink;
+}
+.trans3d:hover{
+    transform:translate3d(100px,100px,200px);
+    transition: all 2s;
+}
+```
+##### 代码效果：
+![3D位移](img/3D位移.gif)
 #### （3）3D旋转
+语法|作用
+--|--
+transform:rotateX(*deg)|绕X轴旋转
+transform:rotateY(*deg)|绕Y轴旋转
+transform:rotateZ(*deg)|绕Z轴旋转
+transform:rotate3d(x,y,z,deg)|绕x,y,z定义的矢量旋转指定度数（仅作了解）
+>**注意点：**  
+旋转的方向遵循左手法则（大拇指指向轴的正方向，其他手指指向的就是旋转方向）
+##### 示例代码：
+```
+<div class="banner">
+    <div class="xuanzhuanX">X轴旋转</div>
+    <div class="xuanzhuanY">Y轴旋转</div>
+    <div class="xuanzhuanZ">Z轴旋转</div>
+    <div class="xuanzhuanS">矢量轴旋转</div>
+</div>
+
+div[class^="xuanzhuan"]{
+    float: left;
+    margin: 10px;
+}
+.xuanzhuanX:hover{
+    transform:rotateX(360deg);
+    transition: all 1.5s;
+}
+.xuanzhuanY:hover{
+    transform:rotateY(360deg);
+    transition: all 1.5s;
+}
+.xuanzhuanZ:hover{
+    transform:rotateZ(360deg);
+    transition: all 1.5s;
+}
+.xuanzhuanS:hover{
+    transform:rotate3d(1,1,0,360deg);
+    transition: all 1.5s;
+}
+```
+##### 代码效果：
+![3D旋转](img/3D旋转.gif)
 #### （4）透视
+定义：透视也称为视距，视距是眼睛到屏幕的距离。就是将3d物体投影到屏幕上，产生近大远小的效果。
+>**注意点：**  
+透视的单位是px，perspective: * px；  
+要写在被透视元素的父级元素
 #### （5）3D呈现
+语法|作用
+--|--
+transform-style：flat|默认属性，子元素不开启3d状态
+transform-style：preserve-3d |子元素保持3D状态
+>**注意点：**  
+transform-style属性是写在父级上的  
+z-index可以设置前后顺序
+##### 示例代码：
+```
+<div class="banner">
+    <div class="red1"">红色的</div>
+    <div class="blue1">蓝色的</div>
+</div>
+
+.banner{
+    transform-style: preserve-3d;
+    position: relative;
+    perspective: 500px;
+    width: 200px;
+    height: 200px;
+    margin: 60px;
+}
+div[class$="1"]{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+}
+.blue1{
+    transform:rotateX(75deg);
+    background-color: blue!important;
+}
+.banner:hover{
+    transform:rotateY(360deg);
+    transition: all 2s;
+}
+```
+##### 代码效果：
+![3d呈现](img/3D呈现.gif)
 ## 三、动画
-### 1、基本属性
+### 1、基本使用
+(1)定义动画 
+``` 
+@keyframes 动画名{
+0%{开始状态}		
+100%{结束状态}
+}
+```
+(2)调用动画
+```
+animation-name:动画名称；
+animation-duration:持续时间；
+```
 ### 2、动画序列
+0% 100% 和 from to 等同效果都是设置动画关键帧
+>**注意点：**  
+可以通过不同百分比设置多个关键帧；  
+百分比就是总时间的划分；
 ### 3、动画属性
 ##### 常用属性：
 动画属性|作用|属性参数
@@ -446,9 +586,59 @@ ease|默认，低速开始变快，结束变慢
 ease-in|以低速开始
 ease-out|以低速结束
 ease-in-out|以低速开始和结束
-steps( )|指定时间函数中的步长 (突变式，上面其他的是渐变式))
-## 四、浏览器私有前缀
+steps( )|指定时间函数中的步长 (突变式，上面其他的是渐变式)
+##### 代码示例：
+```
+<div class="dh">动画</div>
 
+body{
+        transform-style: preserve-3d;
+    }
+@keyframes move{
+    0%{
+        transform:translate(0,0);
+        background-color:pink;
+    }
+    25%{
+        transform: translate(400px,0) rotateY(180deg);
+        background-color: red;
+    }
+    50%{
+        transform: translate(400px,200px) rotateY(360deg);
+        background-color: blue;
+    }
+    75%{
+        transform: translate(0,200px) rotateY(540deg);
+        background-color:yellow;
+    }
+    100%{
+        transform: translate(0,0) rotateY(720deg);
+        background-color: pink;
+    }    
+}
+.dh{
+    width: 100px;
+    height: 100px;
+    animation: move 2s linear 0s infinite normal forwards;
+}
+```
+##### 代码效果
+![动画](img/动画.gif)
+## 四、浏览器私有前缀
+私有前缀是为了兼容老版本的浏览器
+前缀|作用
+--|--
+-moz-|代表firefox浏览器私有属性
+-ms-|代表ie浏览器私有属性
+-webkit-|代表safari、chrome浏览器私有属性
+-o-|代表opera浏览器私有属性
+##### 代码示例：
+```
+-moz-border-radius:50%;
+-o-border-radius:50%;
+-webkit-border-radius:50%;
+border-radius:50%;
+```
 
 
 
