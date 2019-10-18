@@ -44,7 +44,7 @@
             background-color: purple;
         } */
         
-        .child li:nth-child(2) {
+        /* .child li:nth-child(2) {
             width: 100px;
             height: 100px;
             background-color: blue;
@@ -60,11 +60,76 @@
             width: 100px;
             height: 100px;
             background-color: red;
+        } */
+        /* .weiyuansu {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background-color: green;
+        }
+        .weiyuansu::before{
+            display: block;
+            content: "我是前面插队的";
+            height: 60px;
+            line-height: 60px;
+            background-color: pink;
+
+
+        }
+        .weiyuansu::after{
+            content: "我是后面插队的";
+            height: 60px;
+            line-height: 60px;
+            background-color: pink;   
+        } */
+        /* ul{
+            margin: 50px auto;
+            padding: 40px;
+            width: 500px;
+            height: 200px;
+            background-color:green;
+        }
+        li {
+            float: left;
+            list-style: none;
+            height: 40px;
+            line-height: 40px;
+            background-color:pink;
+            border: solid 1px black;
+        }
+        li:nth-child(1):hover{
+            transform:translate(20px,20px);
+        }
+        li:nth-child(2):hover{
+            transform:translateX(20px);
+        }
+        li:nth-child(3):hover{
+            transform:translateY(20px);
+        } */
+        .banner{
+            width: 600px;
+            height: 500px;
+            margin: 60px auto;
+            padding: 100px;
+            background-color: #60e160;
+        }
+        div{
+            margin: 100px;;
+            width: 100px;
+            height: 100px;
+            border:black solid 1px;
+            line-height: 50px;
+            text-align: center;
+            background-color: pink;
+        }
+        .zonghe:hover{
+            transform:translate(100px,100px) rotate(360deg) scale(2);
+            transition: all 2s;
         }
     </style>
 </head>
 
-<body class="h">
+<body>
     <!-- <header class="pink">
         <h3>header</h3>
     </header>
@@ -118,7 +183,7 @@
         <span class="grandson2">小孙子</span>
         <span class="pick">捡来的</span>
     </div> -->
-    <ul class="child">
+    <!-- <ul class="child">
         <li>1</li>
         <p>2</p>
         <li>3</li>
@@ -127,7 +192,16 @@
         <li>1</li>
         <p>2</p>
         <li>3</li>
-    </ul>
+    </ul> -->
+    <!-- <div class="weiyuansu">原本内容</div> -->
+    <!-- <ul>
+        <li>translate(20px,20px)</li>
+        <li>translateX(20px)</li>
+        <li>translate(20px)</li>
+    </ul> -->
+    <div class="banner">
+        <div class="zonghe">综合写法</div>
+    </div>
 </body>
 
 </html>

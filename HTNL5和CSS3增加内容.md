@@ -272,19 +272,144 @@ A::after|在A元素内容的后面加入一个行内元素
 >**注意事项**  
 选择器内必须包含content属性；  
 伪元素选择器和标签选择器一样，权重是1；  
-加入的内容是行内元素；
+加入的内容是**行内元素**；
 ##### 代码示例
 ```
+<div class="weiyuansu">原本内容</div>
 
+.weiyuansu {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            background-color: green;
+        }
+        .weiyuansu::before{
+            display: block;
+            content: "我是前面插队的";
+            height: 60px;
+            line-height: 60px;
+            background-color: pink;
+
+
+        }
+        .weiyuansu::after{
+            content: "我是后面插队的";
+            height: 60px;
+            line-height: 60px;
+            background-color: pink;   
+        }
 ```
 ##### 代码效果
-
+![伪元素选择器](img/伪元素选择器.png)
 ## 二、转换
 ### 1、2D转换
 #### （1）位移
+语法|作用
+--|--
+transform:translate(x,y)|在平面上平移
+transform:translateX(x)|沿x轴位移
+transform:translateY(y)|沿y轴平移
+移动盒子的方式：定位、外边距、2D移动
+>**注意点：**  
+移动按照坐标轴方向移动；  
+不会影响其他元素的位置；  
+还可以按照自身的百分比来移动；  
+对行内元素是不起作用的。
+##### 代码示例：
+```
+    <ul>
+        <li>translate(20px,20px)</li>
+        <li>translateX(20px)</li>
+        <li>translate(20px)</li>
+    </ul>
+
+    li:nth-child(1):hover{
+            transform:translate(20px,20px);
+    }
+    li:nth-child(2):hover{
+            transform:translateX(20px);
+    }
+    li:nth-child(3):hover{
+            transform:translateY(20px);
+    }
+```
+##### 代码效果：
+![2D位移](img/2D位移.gif)
 #### （2）旋转
+语法|作用
+--|--
+transform:rotate(度数)|旋转指定度数  
+transform-oringin|指定旋转中心（默认是中心）
+>**注意点：**  
+旋转单位是度数deg；  
+旋转中心单位可以用**方位名词**、**百分比**、**px**;  
+旋转正值是顺时针，负值是逆时针；
+##### 示例代码：
+```
+    <div class="banner">
+        <div class="shunshi">顺时针<br/>中心</div>
+        <div class="nishi">逆时针<br/>右下角</div>
+    </div>
+
+    .shunshi:hover{
+            transform:rotate(360deg);
+            transition: all 2s;           
+    }
+    .nishi{
+        transform-origin:right bottom;
+    }
+    .nishi:hover{
+        transform:rotate(-360deg);
+        transition: all 2s;
+    }
+
+```
+##### 代码效果：
+![2D旋转](img/2D旋转.gif)
 #### （3）缩放
+##### 语法：
+transform:scale(x,y)
+>**注意点：**  
+参数里面不需要带单位，指的是缩放的倍数；  
+参数小于1是缩小，大于1是放大；  
+只写一个参数表示缩放相同倍数；  
+缩放效果不会影响到其他元素；
+##### 代码示例：
+```
+<div class="banner">
+    <div class="shunshi">放大两倍</div>
+    <div class="nishi">缩小一半 <br/>右下角</div>
+</div>
+
+.shunshi:hover{
+    transform:scale(2,2);
+    transition: all 2s;   
+}
+.nishi{
+    transform-origin:right bottom;
+}
+.nishi:hover{
+    transform:scale(0.5);
+    transition: all 2s; 
+}
+```
+##### 代码效果：
+![缩放](img/缩放.gif)
 #### （4）综合写法
+##### 语法：
+transform:translate(x,y) rotate(度数) scale(x,y);
+>**注意点：**  
+当位移和其他转换综合时，位移要写在前面；
+##### 示例代码：
+```
+.zonghe:hover{
+    transform:translate(100px,100px) rotate(360deg) scale(2);
+    transition: all 2s;
+}
+```
+##### 代码效果：
+![2d转换综合](img/2D转换综合写法.gif)
+
 ### 2、3D转换
 #### （1）三维坐标系
 #### （2）3D移动
