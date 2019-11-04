@@ -5,242 +5,84 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        /* .pink {
-            background-color: pink;
-        }
-        
-        .h {
-            height: 1000px;
-        }
-        
-        .father {
-            width: 500px;
-            height: 500px;
-            margin: 100px auto;
-            background-color: aquamarine;
-        }
-        
-        span {
-            float: left;
-            width: 50px;
-            height: 50px;
-            background-color: pink;
-            border: black 1px solid;
-        }
-        
-        span[class] {
-            background-color: blue;
-        }
-        
-        .father span[class^="grand"] {
-            background-color: yellow;
-        }
-        
-        .father span[class$="dson1"] {
-            background-color: red;
-        }
-        
-        .father span[class*="i"] {
-            background-color: purple;
-        } */
-        
-        /* .child li:nth-child(2) {
-            width: 100px;
-            height: 100px;
-            background-color: blue;
-        }
-        
-        .child li:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            background-color: yellow;
-        }
-        
-        .type li:nth-of-type(2) {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-        } */
-        /* .weiyuansu {
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            background-color: green;
-        }
-        .weiyuansu::before{
-            display: block;
-            content: "我是前面插队的";
-            height: 60px;
-            line-height: 60px;
-            background-color: pink;
-
-
-        }
-        .weiyuansu::after{
-            content: "我是后面插队的";
-            height: 60px;
-            line-height: 60px;
-            background-color: pink;   
-        } */
-        /* ul{
-            margin: 50px auto;
-            padding: 40px;
-            width: 500px;
-            height: 200px;
-            background-color:green;
-        }
-        li {
-            float: left;
-            list-style: none;
-            height: 40px;
-            line-height: 40px;
-            background-color:pink;
-            border: solid 1px black;
-        }
-        li:nth-child(1):hover{
-            transform:translate(20px,20px);
-        }
-        li:nth-child(2):hover{
-            transform:translateX(20px);
-        }
-        li:nth-child(3):hover{
-            transform:translateY(20px);
-        } */
-        
-        /* .banner{
-            transform-style: preserve-3d;
-            position: relative;
-            perspective: 500px;
-            width: 200px;
-            height: 200px;
-            margin: 60px;
-        }
-        div[class$="1"]{
-            position: absolute;
-            top:20px;
-            left: 20px;
-            width: 200px;
-            height: 200px;
-            background-color: pink;
-        }
-        .blue1{
-            transform:rotateX(75deg);
-            background-color: blue!important;
-        }
-        .banner:hover{
-            transform:rotateY(360deg);
-            transition: all 2s;
-        } */
-    /* body{
-        transform-style: preserve-3d;
+    body {
+        width: 1080px;
+        margin: 0 auto;
     }
-    @keyframes move{
-        0%{
-            transform:translate(0,0);
-            background-color:pink;
-        }
-        25%{
-            transform: translate(400px,0) rotateY(180deg);
-            background-color: red;
-        }
-        50%{
-            transform: translate(400px,200px) rotateY(360deg);
-            background-color: blue;
-        }
-        75%{
-            transform: translate(0,200px) rotateY(540deg);
-            background-color:yellow;
-        }
-        100%{
-            transform: translate(0,0) rotateY(720deg);
-            background-color: pink;
-
-        }
-        
-    }
-    .dh{
-        width: 100px;
+    .green {
+        display: flex;
+        width: 600px;
         height: 100px;
-        animation: move 2s linear 0s infinite normal forwards;
+        margin: 10px;
+        background-color: green;
+    }
+    .flex-d-r{
+        flex-direction: row;
+    }
+    .flex-d-rr{
+        flex-direction: row-reverse;
+    }
+    .flex-d-c{
+        flex-direction: column;
+    }
+    .flex-d-cr{
+        flex-direction: column-reverse;
+    }
+    .pink{
+        width: 100px;
+        height: 30px;
+        background-color: pink;
+        border: black 1px solid;
+    }
+    .justify-content-fs{
+        justify-content: flex-start;
+    }
+    .justify-content-fe{
+        justify-content: flex-end;
+    }
+    .justify-content-c{
+        justify-content: center;
+    }
+    .justify-content-sa{
+        justify-content: space-around;
+    }
+    .justify-content-sb{
+        justify-content: space-between;
     }
     </style>
-</head> */
+</head>
 
-/* <body>
-    <!-- <header class="pink">
-        <h3>header</h3>
-    </header>
-    <nav class="pink">
-        <h3>nav</h3>
-    </nav>
-    <article class="pink">
-        <h3>article</h3>
-    </article>
-    <section class="pink">
-        <h3>section</h3>
-    </section>
-    <aside class="pink">
-        <h3>aside</h3>
-    </aside>
-    <footer class="pink">
-        <h3>footer</h3>
-    </footer>
-    <audio controls>
-        <source src="media/芒种.mp3">
-        <source src="media/芒种.ogg">
-    您的浏览器不支持audio标签
-    </audio>
-    <video controls preload="none" loop muted poster="img/video_1.jpg" width="500px">
-        <source src="media/tvc.mp4"> 
-    </video>
-    <form action="get" autocomplete="on" >
-        <ul>
-            <li>邮箱：<input type="email"/></li>
-            <li>网址：<input type="url"/></li>
-            <li>日期：<input type="date"/></li>
-            <li>时间：<input type="time"/></li>
-            <li>月份：<input type="month"/></li>
-            <li>周：<input type="week"/></li>
-            <li>数量：<input type="number"/></li>
-            <li>手机号码：<input type="tel"/></li>
-            <li>搜索：<input type="search"/></li>
-            <li>颜色：<input type="color"/></li>
-            <li><input type="text" required="required"></li>
-            <li><input type="text" placeholder="带placeholder的表单"></li>
-            <li><input type="text" autofocus="autofocus" placeholder="带autofocus的表单"></li>
-            <li><input type="text" autocomplete="on"></li>
-            <li><input type="submit" value="提交"></li>
-
-        </ul>
-    </form>
-    <div class="father">
-        <span class="son1">大儿子</span>
-        <span class="son2">小儿子</span>
-        <span class="grandson1">大孙子</span>
-        <span class="grandson2">小孙子</span>
-        <span class="pick">捡来的</span>
-    </div> -->
-    <!-- <ul class="child">
-        <li>1</li>
-        <p>2</p>
-        <li>3</li>
-    </ul>
-    <ul class="type">
-        <li>1</li>
-        <p>2</p>
-        <li>3</li>
-    </ul> -->
-    <!-- <div class="weiyuansu">原本内容</div> -->
-    <!-- <ul>
-        <li>translate(20px,20px)</li>
-        <li>translateX(20px)</li>
-        <li>translate(20px)</li>
-    </ul> -->
-    <!-- <div class="banner">
-        <div class="red1"">红色的</div>
-        <div class="blue1">蓝色的</div>
-    </div> -->
-    <div class="dh">动画</div>
-</body> */
+<body>
+<div class="green justify-content-fs">
+    <div class="pink">1-fs</div>
+    <div class="pink">2-fs</div>
+    <div class="pink">3-fs</div>
+    <div class="pink">4-fs</div>
+</div>
+<div class="green justify-content-fe">
+    <div class="pink">1-fe</div>
+    <div class="pink">2-fe</div>
+    <div class="pink">3-fe</div>
+    <div class="pink">4-fe</div>
+</div>
+<div class="green justify-content-c">
+    <div class="pink">1-c</div>
+    <div class="pink">2-c</div>
+    <div class="pink">3-c</div>
+    <div class="pink">4-c</div>
+</div>
+<div class="green justify-content-sa">
+    <div class="pink">1-sa</div>
+    <div class="pink">2-sa</div>
+    <div class="pink">3-sa</div>
+    <div class="pink">4-sa</div>
+</div>
+<div class="green justify-content-sb">
+    <div class="pink">1-sb</div>
+    <div class="pink">2-sb</div>
+    <div class="pink">3-sb</div>
+    <div class="pink">4-sb</div>
+</div>
+</body>
 
 </html>
